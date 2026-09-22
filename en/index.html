@@ -3,45 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tempo</title>
+<title>Tempo — Chess Clock</title>
+<meta name="description" content="Tempo is a chess clock for two players at one board: huge digits, one tap per move, no ads and no tracking.">
+<meta name="theme-color" content="#F2F1EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0A09" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Tempo — Chess Clock">
+<meta property="og:description" content="Tempo is a chess clock for two players at one board: huge digits, one tap per move, no ads and no tracking.">
+<meta property="og:image" content="../icon.png">
+<meta property="og:type" content="website">
 <link rel="alternate" hreflang="de" href="../de/index.html">
 <link rel="icon" href="../icon.png">
-<style>:root{--canvas:#F2F1EE;--ink:#161615;--secondary:#57564F;--tertiary:#8A8985;--hairline:rgba(0,0,0,.09);color-scheme:light dark}
-@media (prefers-color-scheme:dark){:root{--canvas:#0B0B0A;--ink:#F4F3EF;--secondary:#AAA9A3;--tertiary:#7A7974;--hairline:rgba(255,255,255,.12)}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--canvas);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
-main{max-width:640px;margin:0 auto;padding:40px 20px 56px}
-.brand{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tertiary);text-decoration:none}
-h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin:10px 0 28px;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
-h2{font-size:18px;line-height:1.3;margin:0 0 8px}
-section{margin:0 0 30px}
-p{color:var(--secondary);margin:0 0 10px}
-address{font-style:normal;margin:0 0 10px}
-a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
-.meta{color:var(--tertiary);font-size:15px}
-.hero{display:flex;align-items:center;gap:18px}
-.hero img{border-radius:22px;flex:none}
-.lead{font-size:21px;line-height:1.35;color:var(--ink);margin:0}
-details{border-top:1px solid var(--hairline);padding:12px 0}
-details:last-child{border-bottom:1px solid var(--hairline)}
-summary{cursor:pointer;font-weight:600;color:var(--ink)}
-details p{margin:8px 0 0}
-footer{max-width:640px;margin:0 auto;padding:0 20px 40px;font-size:15px;color:var(--tertiary)}
-footer a{color:var(--secondary);margin-right:16px;display:inline-block;padding:4px 0}</style>
+<link rel="apple-touch-icon" href="../icon.png">
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
+<div class="wrap">
+<header class="top">
+<a class="brand" href="index.html"><img src="../icon.png" width="30" height="30" alt=""> Tempo</a>
+<nav class="lang" aria-label="Language">
+<a href="index.html" aria-current="page" hreflang="en">EN</a>
+<a href="../de/index.html" hreflang="de">DE</a>
+</nav>
+</header>
 <main>
-<a class="brand" href="index.html">Tempo</a>
 <section class="hero">
-<img src="../icon.png" width="96" height="96" alt="">
-<p class="lead">A chess clock. Nothing else.</p>
+<h1>A chess clock.<br>Nothing else.</h1>
+<p class="lead">Put your iPhone next to the board. Tap your half after your move. That is all there is to know.</p>
+<p class="soon">Coming soon to the App Store.</p>
+<figure class="shot">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="../media/clock-en-dark.png">
+<img src="../media/clock-en.png" width="640" height="1390" alt="Tempo on an iPhone: two halves with big digits, Black at the top, White at the bottom">
+</picture>
+</figure>
 </section>
-<section>
-<h2>Help & contact</h2>
-<p>Questions, ideas or a bug? Write to me: <a href="mailto:lenn@gahlert.net">lenn@gahlert.net</a></p>
+
+<section class="features">
+<div class="card">
+<h3>Two big halves</h3>
+<p>Each side belongs to one player. After your move you tap anywhere on your half, and the clock hands over at once.</p>
+</div>
+<div class="card">
+<h3>Colors from the board</h3>
+<p>White is light, Black is dark. The top half is upside down, so the player across the table reads it the right way up.</p>
+</div>
+<div class="card">
+<h3>Down to the millisecond</h3>
+<p>Tempo works from timestamps of the monotonic clock instead of counting seconds. In the last ten seconds it shows tenths.</p>
+</div>
+<div class="card">
+<h3>Every time control</h3>
+<p>Bullet to classical, Fischer increment, delay, a different time per player and extra time after a set move.</p>
+</div>
 </section>
-<section>
-<h2>Frequently asked</h2>
+
+<section id="help">
+<h2>Help &amp; contact</h2>
+<p>Questions, ideas or a bug? Write to me:
+<a href="mailto:lenn@gahlert.net">lenn@gahlert.net</a></p>
 <details>
 <summary>What if something interrupts a game?</summary>
 <p>During a game the screen stays on. If the app is interrupted anyway — say, by a call — Tempo keeps counting with the device's monotonic clock, so the running time is exact afterwards. And if the app is closed, you can resume the game the next time you open it.</p>
@@ -54,15 +73,22 @@ footer a{color:var(--secondary);margin-right:16px;display:inline-block;padding:4
 <summary>How do I change the language?</summary>
 <p>Tempo follows your system language. To change it for Tempo alone, go to Settings › Apps › Tempo › Language.</p>
 </details>
+<details>
+<summary>Does Tempo run on iPad?</summary>
+<p>Yes, on iPhone and iPad, portrait and landscape, light and dark. In landscape the halves sit side by side, like a tournament clock.</p>
+</details>
 </section>
 </main>
 <footer>
 <nav>
-<a href="index.html">Support</a>
+<a href="index.html">Start</a>
 <a href="privacy.html">Privacy policy</a>
 <a href="legal-notice.html">Legal notice</a>
+<a href="mailto:lenn@gahlert.net">Contact</a>
 <a href="../de/index.html" hreflang="de">Deutsch</a>
 </nav>
+<p>© 2026 Lenn Gahlert</p>
 </footer>
+</div>
 </body>
 </html>
